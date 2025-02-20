@@ -18,14 +18,14 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create()
                     .strength(4f)
                     .requiresTool()
-                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+                    .sounds(BlockSoundGroup.AMETHYST_CLUSTER)
             ));
     // Registering the Raw Pink Garnet Block
     public static final Block RAW_PINK_GARNET_BLOCK = registerBlock("raw_pink_garnet_block",
             new Block(AbstractBlock.Settings.create()
                     .strength(3f)
                     .requiresTool()
-                    .sounds(BlockSoundGroup.AMETHYST_CLUSTER)
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
             ));
 
     // Helper method to register a block and its corresponding BlockItem
