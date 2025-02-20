@@ -9,13 +9,17 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+    // Registering the Pink Garnet
     public static final Item PINK_GARNET = registerItem( "pink_garnet", new Item(new Item.Settings()));
+    // Registering the Raw Pink Garnet
     public static final Item RAW_PINK_GARNET = registerItem( "raw_pink_garnet", new Item(new Item.Settings()));
 
+    // Helper method to register an item
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(TutorialMod.MOD_ID, name), item);
     }
 
+    // Method to register all mod items and add them to the INGREDIENTS item group
     public static void registerModItems() {
         TutorialMod.LOGGER.info("Registering mod items for" + TutorialMod.MOD_ID);
 

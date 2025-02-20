@@ -13,13 +13,14 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
+    // Registering the Pink Garnet Block
     public static final Block PINK_GARNET_BLOCK = registerBlock( "pink_garnet_block",
             new Block(AbstractBlock.Settings.create()
                     .strength(4f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
             ));
-
+    // Registering the Raw Pink Garnet Block
     public static final Block RAW_PINK_GARNET_BLOCK = registerBlock("raw_pink_garnet_block",
             new Block(AbstractBlock.Settings.create()
                     .strength(3f)
@@ -27,16 +28,19 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.AMETHYST_CLUSTER)
             ));
 
+    // Helper method to register a block and its corresponding BlockItem
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
     }
 
+    // Helper method to register the BlockItem, which allows the block to be placed and used in the world
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TutorialMod.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
 
+    // Method to register all mod blocks and add them to the BUILDING_BLOCKS item group
     public static void registerModBlocks() {
         TutorialMod.LOGGER.info("Registering mod blocks for" + TutorialMod.MOD_ID);
 
