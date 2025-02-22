@@ -16,15 +16,16 @@ import java.util.Map;
 import java.util.Objects;
 
 public class ChiselItem extends Item {
+
+    public ChiselItem(Settings settings){
+        super(settings);
+    }
+
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
                     Blocks.STONE, Blocks.STONE_BRICKS,
                     Blocks.END_STONE, Blocks.END_STONE_BRICKS
             );
-
-    public ChiselItem(Settings settings){
-        super(settings);
-    }
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -47,9 +48,6 @@ public class ChiselItem extends Item {
                 world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
             }
         }
-
-
-
         return super.useOnBlock(context);
     }
 }

@@ -2,6 +2,7 @@ package net.kurorh.tutorialmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kurorh.tutorialmod.TutorialMod;
+import net.kurorh.tutorialmod.block.custom.MagicBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
@@ -45,6 +46,11 @@ public class ModBlocks {
                             strength(4f).
                             requiresTool().
                             sounds(BlockSoundGroup.DEEPSLATE)));
+
+    public static final Block MAGIC_BLOCK = registerBlock("magic_block",
+            new MagicBlock(AbstractBlock.Settings.create()
+                    .strength(1f)
+                    .requiresTool()));
 
     // Helper method to register a block and its corresponding BlockItem
     private static Block registerBlock(String name, Block block) {
